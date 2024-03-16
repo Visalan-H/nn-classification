@@ -197,25 +197,21 @@ print(x_single_prediction)
 print(le.inverse_transform(x_single_prediction))
 ```
 ## Dataset Information
-
-Include screenshot of the dataset
+![image](https://github.com/Visalan-H/nn-classification/assets/152077751/6e8626c3-1a2f-497a-b24e-cadb696c3475)
 
 ## OUTPUT
 ### Training Loss, Validation Loss Vs Iteration Plot
-Include your plot here
+![image](https://github.com/Visalan-H/nn-classification/assets/152077751/6ba9122f-11f3-42d3-8405-7d3109f779f0)
 
 ### Classification Report
-
-Include Classification Report here
+![image](https://github.com/Visalan-H/nn-classification/assets/152077751/be7b7ef3-f2a1-4cbb-af85-0e3335b8bdcd)
 
 ### Confusion Matrix
-
-Include confusion matrix here
-
+![image](https://github.com/Visalan-H/nn-classification/assets/152077751/c1bd81fc-6fa4-4516-930d-c18d8ac6b4b8)
 
 ### New Sample Data Prediction
 
-Include your sample input and output here
+![image](https://github.com/Visalan-H/nn-classification/assets/152077751/7bab7048-1b89-432f-a019-70a2ebb561f6)
 
 ## RESULT
 Include your result here
