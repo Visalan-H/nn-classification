@@ -62,35 +62,20 @@ import matplotlib.pylab as plt
 
 
 customer_df = pd.read_csv('customers.csv')
-
 customer_df.columns
-
 customer_df.dtypes
-
 customer_df.shape
-
 customer_df.isnull().sum()
-
 customer_df_cleaned = customer_df.dropna(axis=0)
-
 customer_df_cleaned.isnull().sum()
-
 customer_df_cleaned.shape
-
 customer_df_cleaned.dtypes
-
 customer_df_cleaned['Gender'].unique()
-
 customer_df_cleaned['Ever_Married'].unique()
-
 customer_df_cleaned['Graduated'].unique()
-
 customer_df_cleaned['Profession'].unique()
-
 customer_df_cleaned['Spending_Score'].unique()
-
 customer_df_cleaned['Var_1'].unique()
-
 customer_df_cleaned['Segmentation'].unique()
 
 categories_list=[['Male', 'Female'],
@@ -147,46 +132,27 @@ plt.figure(figsize=(10,6))
 sns.boxplot(x='Family_Size',y='Age',data=customers_1)
 
 customers_1.describe()
-
 customers_1['Segmentation'].unique()
-
 X=customers_1[['Gender','Ever_Married','Age','Graduated','Profession','Work_Experience','Spending_Score','Family_Size']].values
 
-
-
 y1 = customers_1[['Segmentation']].values
-
 one_hot_enc = OneHotEncoder()
-
 one_hot_enc.fit(y1)
-
 y1.shape
-
 y = one_hot_enc.transform(y1).toarray()
-
 y.shape
-
 y1[0]
-
 y[0]
-
 X.shape
-
 X_train,X_test,y_train,y_test=train_test_split(X,y,
                                                test_size=0.33,
                                                random_state=50)
-
 X_train[0]
-
 X_train.shape
-
 scaler_age=MinMaxScaler()
-
 scaler_age.fit(X_train[:,2].reshape(-1,1))
-
 X_train_scaled = np.copy(X_train)
 X_test_scaled = np.copy(X_test)
-
 X_train_scaled[:,2] = scaler_age.transform(X_train[:,2].reshape(-1,1)).reshape(-1)
 X_test_scaled[:,2] = scaler_age.transform(X_test[:,2].reshape(-1,1)).reshape(-1)
 
@@ -205,48 +171,31 @@ model.fit(x=X_train_scaled,y=y_train,
              batch_size= 256,
              validation_data=(X_test_scaled,y_test),
              )
-
 metrics = pd.DataFrame(model.history.history)
-
 metrics.head()
-
 metrics[['loss','val_loss']].plot()
-
 x_test_predictions = np.argmax(model.predict(X_test_scaled), axis=1)
-
 x_test_predictions.shape
-
 y_test_truevalue = np.argmax(y_test,axis=1)
-
 y_test_truevalue.shape
-
 print(confusion_matrix(y_test_truevalue,x_test_predictions))
-
 print(classification_report(y_test_truevalue,x_test_predictions))
 
 # Saving the Model
 model.save('customer_classification_model.h5')
 
-
 # Saving the data
 with open('customer_data.pickle', 'wb') as fh:
    pickle.dump([X_train_scaled,y_train,X_test_scaled,y_test,customers_1,customer_df_cleaned,scaler_age,enc,one_hot_enc,le], fh)
-
 # Loading the Model
 model = load_model('customer_classification_model.h5')
-
 # Loading the data
 with open('customer_data.pickle', 'rb') as fh:
    [X_train_scaled,y_train,X_test_scaled,y_test,customers_1,customer_df_cleaned,scaler_age,enc,one_hot_enc,le]=pickle.load(fh)
-
 x_single_prediction = np.argmax(model.predict(X_test_scaled[1:2,:]), axis=1)
-
 print(x_single_prediction)
-
 print(le.inverse_transform(x_single_prediction))
-
-
-
+```
 ## Dataset Information
 
 Include screenshot of the dataset
