@@ -214,4 +214,4 @@ print(le.inverse_transform(x_single_prediction))
 ![image](https://github.com/Visalan-H/nn-classification/assets/152077751/7bab7048-1b89-432f-a019-70a2ebb561f6)
 
 ## RESULT
-Include your result here
+Thus a neural network classification model is developed for the given dataset.
