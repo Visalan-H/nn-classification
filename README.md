@@ -40,7 +40,6 @@ You are required to help the manager to predict the right group of the new custo
 ### Register Number:212223240183
 
 ```python
-<a href="https://colab.research.google.com/github/Rithigasri/DL_Exp02/blob/main/DL_EXP02.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
