@@ -21,7 +21,7 @@ You are required to help the manager to predict the right group of the new custo
 
 1)Load and Preprocess Data: Load the dataset "customers.csv" and handle missing values by dropping rows with null values. Encode string data types into numerical values.
 
-2)Exploratory Data Analysis (EDA): Analyze the dataset using correlation matrix and heatmap. Visualize data relationships using various plots like pairplot, displot, countplot, and scatterplot.
+2)Analyze the dataset using correlation matrix and heatmap. Visualize data relationships using various plots like pairplot, displot, countplot, and scatterplot.
 
 3)Data Splitting: Split the dataset into training and testing sets using train_test_split.
 
